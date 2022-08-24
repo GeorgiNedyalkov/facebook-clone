@@ -4,10 +4,16 @@ import { InsertEmoticon, PhotoLibrary, Videocam } from '@mui/icons-material';
 import './MessageSender.css'
 
 function MessageSender() {
-  const [input, setInput] = useState();
+  const [input, setInput] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
+
   const handleSubmit = (event) => {
         event.preventDefault();
-    }
+
+
+        setInput('');
+        setImageUrl('');
+  }
 
   return (
     <div className='messageSender'>
@@ -15,10 +21,15 @@ function MessageSender() {
           <Avatar />
           <form>
             <input 
+            value={input}
+            onChange={e => setInput(e.target.value)}
             placeholder={`What's on your mind?`}
             className="messageSender__input"
             />
-            <input className="messageSender__input" placeholder='image URL (Optional)' />
+            <input 
+            value={imageUrl}
+            onChange={e => setImageUrl(e.target.value)}
+            placeholder='image URL (Optional)' />
             <button onClick={handleSubmit} type="submit">
                 Hidden Sumbit
             </button>
