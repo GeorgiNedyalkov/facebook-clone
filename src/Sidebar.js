@@ -1,15 +1,18 @@
-import React from 'react'
-import SidebarRow from './SidebarRow'
-import "./Sidebar.css"
-import { Chat, EmojiFlags, ExpandMoreOutlined, LocalHospital, People, Storefront, VideoLibrary } from '@mui/icons-material'
+import React from 'react';
+import SidebarRow from './SidebarRow';
+import "./Sidebar.css";
+import { Chat, EmojiFlags, ExpandMoreOutlined, LocalHospital, People, Storefront, VideoLibrary } from '@mui/icons-material';
+import { useStateValue } from './StateProvider';
 
 function Sidebar() {
+  const [{ user }, dispatch] = useStateValue();
+
   return (
     <div className='sidebar'>
         <SidebarRow 
-        src="https://avatars.githubusercontent.com/u/51360924?s=96&v=4" 
-        title="Georgi Nedaylkov"
-        alt="Georgi Nedyalkov"
+        src={user.photoURL} 
+        title={user.displayName}
+        alt={user.displayName}
         />
         <SidebarRow 
           Icon={LocalHospital}
