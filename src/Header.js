@@ -11,8 +11,8 @@ import Add from "@mui/icons-material/Add";
 import Forum from "@mui/icons-material/Forum"
 import { NotificationsActive } from '@mui/icons-material';
 import { ExpandMore } from '@mui/icons-material';
-
 import { Avatar, IconButton } from "@mui/material";
+import { useStateValue } from './StateProvider';
 
 
 function Header() {

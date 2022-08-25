@@ -25,3 +25,7 @@
     display: flex;
     flex-direction: column;
 }
+
+.login__logo-text {
+    width: 20vw;
+}
